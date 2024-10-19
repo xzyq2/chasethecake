@@ -3,10 +3,13 @@ info.onCountdownEnd(function () {
 })
 sprites.onOverlap(SpriteKind.Player, SpriteKind.Food, function (sprite, otherSprite) {
     info.changeScoreBy(1)
+    time += -0.05
     cake.setPosition(randint(120, 10), randint(120, 10))
-    info.startCountdown(3)
+    info.startCountdown(time)
 })
 let cake: Sprite = null
+let time = 0
+time = 3
 scene.setBackgroundColor(6)
 let ducc = sprites.create(img`
     . . . . . . . . . . b 5 b . . . 
